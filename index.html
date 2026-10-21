@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StyleVerse — The Future of Luxury Fashion</title>
+  <meta name="description" content="StyleVerse is the world's premier AI-powered luxury fashion platform. Discover personalized outfits, virtual try-on, and an unparalleled shopping experience curated just for you." />
+  <meta name="keywords" content="luxury fashion, AI outfit recommendations, virtual try-on, designer clothing, StyleVerse" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  NAVIGATION                                    -->
+  <!-- ══════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">STYLE<span class="logo-accent">VERSE</span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#collections" class="nav-link">Collections</a></li>
+        <li><a href="#ai-stylist" class="nav-link">AI Stylist</a></li>
+        <li><a href="#virtual-tryon" class="nav-link">Virtual Try-On</a></li>
+        <li><a href="#trends" class="nav-link">Trends</a></li>
+        <li><a href="#loyalty" class="nav-link">Rewards</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="searchToggle" title="Search" aria-label="Search">
+          <i class="fas fa-search"></i>
+        </button>
+        <button class="nav-icon-btn" id="profileToggle" title="Profile" aria-label="Profile">
+          <i class="fas fa-user"></i>
+        </button>
+        <button class="nav-icon-btn cart-btn" id="cartToggle" title="Cart" aria-label="Shopping Cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-overlay" id="searchOverlay">
+      <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Search styles, designers, trends..." class="search-input" />
+        <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="search-suggestions">
+        <span class="suggestion-tag">White Blazer</span>
+        <span class="suggestion-tag">Summer Collection</span>
+        <span class="suggestion-tag">Evening Wear</span>
+        <span class="suggestion-tag">Sustainable Fashion</span>
+        <span class="suggestion-tag">New Arrivals</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  HERO SECTION                                  -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-slides" id="heroSlides">
+
+      <div class="hero-slide active" style="background-image: url('assets/hero_fashion_banner.png')">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-badge animate-fade-up">✦ AI-Powered Fashion Intelligence</div>
+          <h1 class="hero-title animate-fade-up delay-1">
+            Dress the<br/><em>Future.</em>
+          </h1>
+          <p class="hero-subtitle animate-fade-up delay-2">
+            Where artificial intelligence meets haute couture.<br/>
+            Curated exclusively for you.
+          </p>
+          <div class="hero-cta animate-fade-up delay-3">
+            <button class="btn-primary" onclick="scrollToSection('collections')">Explore Collections</button>
+            <button class="btn-ghost" onclick="scrollToSection('ai-stylist')">Meet Your AI Stylist</button>
+          </div>
+          <div class="hero-stats animate-fade-up delay-4">
+            <div class="stat">
+              <span class="stat-number" data-target="50">0</span><span>K+</span>
+              <span class="stat-label">Curated Pieces</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number" data-target="2">0</span><span>M+</span>
+              <span class="stat-label">Style Profiles</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat">
+              <span class="stat-number" data-target="98">0</span><span>%</span>
+              <span class="stat-label">Style Match Rate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slide" style="background-image: url('assets/collection_white_dress.png')">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-badge animate-fade-up">✦ New Season Arrivals</div>
+          <h1 class="hero-title animate-fade-up delay-1">
+            Timeless<br/><em>Elegance.</em>
+          </h1>
+          <p class="hero-subtitle animate-fade-up delay-2">
+            The SS26 Collection is here.<br/>
+            Pure. Refined. Unforgettable.
+          </p>
+          <div class="hero-cta animate-fade-up delay-3">
+            <button class="btn-primary" onclick="scrollToSection('collections')">Shop SS26</button>
+            <button class="btn-ghost" onclick="openTryon()">Virtual Try-On</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Hero Navigation Dots -->
+    <div class="hero-dots">
+      <button class="hero-dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+      <button class="hero-dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  MARQUEE TICKER                               -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="ticker-wrapper">
+    <div class="ticker-track">
+      <span>NEW ARRIVALS SS26</span><span class="ticker-dot">✦</span>
+      <span>AI OUTFIT CURATION</span><span class="ticker-dot">✦</span>
+      <span>VIRTUAL TRY-ON NOW LIVE</span><span class="ticker-dot">✦</span>
+      <span>FREE EXPRESS DELIVERY</span><span class="ticker-dot">✦</span>
+      <span>LOYALTY REWARDS — EARN & REDEEM</span><span class="ticker-dot">✦</span>
+      <span>SUSTAINABLE LUXURY</span><span class="ticker-dot">✦</span>
+      <span>NEW ARRIVALS SS26</span><span class="ticker-dot">✦</span>
+      <span>AI OUTFIT CURATION</span><span class="ticker-dot">✦</span>
+      <span>VIRTUAL TRY-ON NOW LIVE</span><span class="ticker-dot">✦</span>
+      <span>FREE EXPRESS DELIVERY</span><span class="ticker-dot">✦</span>
+      <span>LOYALTY REWARDS — EARN & REDEEM</span><span class="ticker-dot">✦</span>
+      <span>SUSTAINABLE LUXURY</span><span class="ticker-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  COLLECTIONS SECTION                          -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="collections" id="collections">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow">Curated for You</p>
+        <h2 class="section-title">Featured Collections</h2>
+        <p class="section-subtitle">Each piece selected by our AI, refined by our designers.</p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-filter="all">All</button>
+        <button class="filter-tab" data-filter="new">New Arrivals</button>
+        <button class="filter-tab" data-filter="dresses">Dresses</button>
+        <button class="filter-tab" data-filter="outerwear">Outerwear</button>
+        <button class="filter-tab" data-filter="accessories">Accessories</button>
+        <button class="filter-tab" data-filter="eveningwear">Evening Wear</button>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid" id="productGrid">
+
+        <article class="product-card" data-category="dresses new" id="prod-001">
+          <div class="product-image-wrap">
+            <img src="assets/collection_white_dress.png" alt="Celestial White Silk Gown" class="product-img" loading="lazy" />
+            <div class="product-badges">
+              <span class="badge badge-new">New</span>
+              <span class="badge badge-ai">AI Pick</span>
+            </div>
+            <div class="product-actions">
+              <button class="product-action-btn" onclick="toggleWishlist(this, 'prod-001')" title="Wishlist" aria-label="Add to Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="product-action-btn" onclick="openTryon()" title="Virtual Try-On" aria-label="Virtual Try-On">
+                <i class="fas fa-camera"></i>
+              </button>
+              <button class="product-action-btn" onclick="quickView('prod-001')" title="Quick View" aria-label="Quick View">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <div class="product-tryon-badge">Try-On Available</div>
+          </div>
+          <div class="product-info">
+            <p class="product-designer">STYLEVERSE COUTURE</p>
+            <h3 class="product-name">Celestial Silk Gown</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(128)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price">₹48,500</span>
+              <button class="add-to-cart-btn" onclick="addToCart('prod-001','Celestial Silk Gown','₹48,500')">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="outerwear new" id="prod-002">
+          <div class="product-image-wrap">
+            <img src="assets/collection_black_blazer.png" alt="Midnight Tailored Blazer" class="product-img" loading="lazy" />
+            <div class="product-badges">
+              <span class="badge badge-new">New</span>
+            </div>
+            <div class="product-actions">
+              <button class="product-action-btn" onclick="toggleWishlist(this, 'prod-002')" title="Wishlist" aria-label="Add to Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="product-action-btn" onclick="openTryon()" title="Virtual Try-On" aria-label="Virtual Try-On">
+                <i class="fas fa-camera"></i>
+              </button>
+              <button class="product-action-btn" onclick="quickView('prod-002')" title="Quick View" aria-label="Quick View">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <div class="product-tryon-badge">Try-On Available</div>
+          </div>
+          <div class="product-info">
+            <p class="product-designer">ATELIER NOIR</p>
+            <h3 class="product-name">Midnight Power Blazer</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="far fa-star"></i>
+              <span>(94)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price">₹32,000</span>
+              <button class="add-to-cart-btn" onclick="addToCart('prod-002','Midnight Power Blazer','₹32,000')">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="accessories" id="prod-003">
+          <div class="product-image-wrap">
+            <img src="assets/collection_handbag.png" alt="Ivory Structured Tote" class="product-img" loading="lazy" />
+            <div class="product-badges">
+              <span class="badge badge-exclusive">Exclusive</span>
+              <span class="badge badge-ai">AI Pick</span>
+            </div>
+            <div class="product-actions">
+              <button class="product-action-btn" onclick="toggleWishlist(this, 'prod-003')" title="Wishlist" aria-label="Add to Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="product-action-btn" onclick="openTryon()" title="Virtual Try-On" aria-label="Virtual Try-On">
+                <i class="fas fa-camera"></i>
+              </button>
+              <button class="product-action-btn" onclick="quickView('prod-003')" title="Quick View" aria-label="Quick View">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-designer">MAISON LUXE</p>
+            <h3 class="product-name">Ivory Structured Tote</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(217)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price">₹85,000</span>
+              <button class="add-to-cart-btn" onclick="addToCart('prod-003','Ivory Structured Tote','₹85,000')">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="eveningwear" id="prod-004">
+          <div class="product-image-wrap">
+            <img src="assets/hero_fashion_banner.png" alt="Couture Evening Gown" class="product-img" loading="lazy" />
+            <div class="product-badges">
+              <span class="badge badge-limited">Limited</span>
+            </div>
+            <div class="product-actions">
+              <button class="product-action-btn" onclick="toggleWishlist(this, 'prod-004')" title="Wishlist" aria-label="Add to Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="product-action-btn" onclick="openTryon()" title="Virtual Try-On" aria-label="Virtual Try-On">
+                <i class="fas fa-camera"></i>
+              </button>
+              <button class="product-action-btn" onclick="quickView('prod-004')" title="Quick View" aria-label="Quick View">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <div class="product-tryon-badge">Try-On Available</div>
+          </div>
+          <div class="product-info">
+            <p class="product-designer">COUTURE BLANCHE</p>
+            <h3 class="product-name">Luminary Evening Gown</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(56)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price">₹1,25,000</span>
+              <button class="add-to-cart-btn" onclick="addToCart('prod-004','Luminary Evening Gown','₹1,25,000')">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="dresses" id="prod-005">
+          <div class="product-image-wrap">
+            <img src="assets/collection_black_blazer.png" alt="Monochrome Set" class="product-img" loading="lazy" />
+            <div class="product-badges">
+              <span class="badge badge-ai">AI Pick</span>
+            </div>
+            <div class="product-actions">
+              <button class="product-action-btn" onclick="toggleWishlist(this, 'prod-005')" title="Wishlist" aria-label="Add to Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="product-action-btn" onclick="openTryon()" title="Virtual Try-On" aria-label="Virtual Try-On">
+                <i class="fas fa-camera"></i>
+              </button>
+              <button class="product-action-btn" onclick="quickView('prod-005')" title="Quick View" aria-label="Quick View">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-designer">MONOCHROME ATELIER</p>
+            <h3 class="product-name">Obsidian Power Set</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="far fa-star"></i>
+              <span>(83)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price">₹42,500</span>
+              <button class="add-to-cart-btn" onclick="addToCart('prod-005','Obsidian Power Set','₹42,500')">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="accessories new" id="prod-006">
+          <div class="product-image-wrap">
+            <img src="assets/collection_handbag.png" alt="Gold Chain Micro Bag" class="product-img" loading="lazy" />
+            <div class="product-badges">
+              <span class="badge badge-new">New</span>
+              <span class="badge badge-limited">Limited</span>
+            </div>
+            <div class="product-actions">
+              <button class="product-action-btn" onclick="toggleWishlist(this, 'prod-006')" title="Wishlist" aria-label="Add to Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="product-action-btn" onclick="openTryon()" title="Virtual Try-On" aria-label="Virtual Try-On">
+                <i class="fas fa-camera"></i>
+              </button>
+              <button class="product-action-btn" onclick="quickView('prod-006')" title="Quick View" aria-label="Quick View">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-info">
+            <p class="product-designer">GILDED HOUSE</p>
+            <h3 class="product-name">Gold Chain Micro Bag</h3>
+            <div class="product-rating">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <span>(145)</span>
+            </div>
+            <div class="product-price-row">
+              <span class="product-price">₹62,000</span>
+              <button class="add-to-cart-btn" onclick="addToCart('prod-006','Gold Chain Micro Bag','₹62,000')">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="view-all-wrap">
+        <button class="btn-outline">View All Collections <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  AI STYLIST SECTION                           -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="ai-stylist" id="ai-stylist">
+    <div class="section-container">
+      <div class="ai-stylist-grid">
+        <div class="ai-stylist-left">
+          <p class="section-eyebrow light">Powered by Intelligence</p>
+          <h2 class="section-title light">Your Personal<br/><em>AI Stylist</em></h2>
+          <p class="ai-stylist-desc">
+            Our proprietary AI engine analyzes over 10,000 style data points — 
+            your body type, preferences, occasion, season, and current trends — 
+            to craft the perfect outfit ensemble, exclusively for you.
+          </p>
+          <div class="ai-features-list">
+            <div class="ai-feature-item">
+              <div class="ai-feature-icon"><i class="fas fa-brain"></i></div>
+              <div>
+                <h4>Deep Style Analysis</h4>
+                <p>AI maps your unique aesthetic fingerprint</p>
+              </div>
+            </div>
+            <div class="ai-feature-item">
+              <div class="ai-feature-icon"><i class="fas fa-palette"></i></div>
+              <div>
+                <h4>Color Harmony Engine</h4>
+                <p>Perfect color combinations every time</p>
+              </div>
+            </div>
+            <div class="ai-feature-item">
+              <div class="ai-feature-icon"><i class="fas fa-chart-line"></i></div>
+              <div>
+                <h4>Trend Intelligence</h4>
+                <p>Real-time runway & street style analysis</p>
+              </div>
+            </div>
+            <div class="ai-feature-item">
+              <div class="ai-feature-icon"><i class="fas fa-heart"></i></div>
+              <div>
+                <h4>Occasion Matching</h4>
+                <p>Right outfit for every life moment</p>
+              </div>
+            </div>
+          </div>
+          <button class="btn-primary" onclick="openAIStylist()">Get Your AI Recommendations</button>
+        </div>
+
+        <div class="ai-stylist-right">
+          <div class="ai-panel glass-card">
+            <div class="ai-panel-header">
+              <div class="ai-avatar-pulse">
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring delay"></div>
+                <i class="fas fa-robot ai-avatar-icon"></i>
+              </div>
+              <div>
+                <h4>StyleVerse AI</h4>
+                <p class="ai-status"><span class="status-dot"></span>Analyzing your style...</p>
+              </div>
+            </div>
+            <div class="ai-chat-area" id="aiChatArea">
+              <div class="ai-message">
+                <div class="ai-bubble">
+                  Hello! I'm your personal AI stylist. Let me curate the perfect looks for you. 
+                  What occasion are you dressing for today? ✨
+                </div>
+              </div>
+            </div>
+            <div class="ai-input-area">
+              <input type="text" id="aiInput" placeholder="Ask me anything about style..." class="ai-input" />
+              <button class="ai-send-btn" onclick="sendAIMessage()" id="aiSendBtn" aria-label="Send message">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+            <div class="ai-quick-replies">
+              <button class="quick-reply" onclick="sendQuickReply('Wedding outfit ideas')">Wedding</button>
+              <button class="quick-reply" onclick="sendQuickReply('Office work looks')">Office</button>
+              <button class="quick-reply" onclick="sendQuickReply('Party night out')">Party</button>
+              <button class="quick-reply" onclick="sendQuickReply('Casual weekend style')">Casual</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  VIRTUAL TRY-ON SECTION                       -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="virtual-tryon" id="virtual-tryon">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow">Revolutionary Technology</p>
+        <h2 class="section-title">Virtual Try-On</h2>
+        <p class="section-subtitle">See how every piece looks on you before you buy. Powered by advanced AR.</p>
+      </div>
+
+      <div class="tryon-grid">
+        <div class="tryon-preview-area" id="tryonPreviewArea">
+          <div class="tryon-frame glass-card">
+            <div class="tryon-placeholder" id="tryonPlaceholder">
+              <div class="tryon-icon">
+                <i class="fas fa-camera-retro"></i>
+              </div>
+              <h3>Activate Virtual Try-On</h3>
+              <p>Upload your photo or use your camera to try on any piece instantly</p>
+              <div class="tryon-actions">
+                <button class="btn-primary" onclick="startCamera()" id="startCameraBtn">
+                  <i class="fas fa-camera"></i> Use Camera
+                </button>
+                <label class="btn-outline" for="uploadPhoto">
+                  <i class="fas fa-upload"></i> Upload Photo
+                </label>
+                <input type="file" id="uploadPhoto" accept="image/*" style="display:none" onchange="uploadTryonPhoto(event)" />
+              </div>
+            </div>
+            <video id="tryonVideo" class="tryon-video" style="display:none" autoplay muted playsinline></video>
+            <canvas id="tryonCanvas" style="display:none"></canvas>
+            <div class="tryon-active-overlay" id="tryonActiveOverlay" style="display:none">
+              <div class="tryon-outfit-label" id="tryonOutfitLabel">Celestial Silk Gown</div>
+              <div class="ar-scan-line"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tryon-wardrobe">
+          <h3 class="tryon-wardrobe-title">Select a Piece to Try</h3>
+          <div class="tryon-items" id="tryonItems">
+            <div class="tryon-item active" onclick="selectTryonItem(this, 'Celestial Silk Gown')" id="tryon-item-1">
+              <img src="assets/collection_white_dress.png" alt="Celestial Silk Gown" />
+              <p>Celestial Silk Gown</p>
+            </div>
+            <div class="tryon-item" onclick="selectTryonItem(this, 'Midnight Power Blazer')" id="tryon-item-2">
+              <img src="assets/collection_black_blazer.png" alt="Midnight Power Blazer" />
+              <p>Midnight Power Blazer</p>
+            </div>
+            <div class="tryon-item" onclick="selectTryonItem(this, 'Ivory Structured Tote')" id="tryon-item-3">
+              <img src="assets/collection_handbag.png" alt="Ivory Structured Tote" />
+              <p>Ivory Structured Tote</p>
+            </div>
+            <div class="tryon-item" onclick="selectTryonItem(this, 'Luminary Evening Gown')" id="tryon-item-4">
+              <img src="assets/hero_fashion_banner.png" alt="Luminary Evening Gown" />
+              <p>Luminary Evening Gown</p>
+            </div>
+          </div>
+          <div class="tryon-controls">
+            <div class="control-group">
+              <label>Body Type</label>
+              <select class="tryon-select" id="bodyTypeSelect">
+                <option>Slim</option>
+                <option selected>Athletic</option>
+                <option>Curvy</option>
+                <option>Petite</option>
+                <option>Plus Size</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label>Skin Tone</label>
+              <div class="skin-tones">
+                <button class="skin-btn" style="background:#FFDBB4" onclick="selectSkin(this)" aria-label="Fair skin tone"></button>
+                <button class="skin-btn active" style="background:#D4956A" onclick="selectSkin(this)" aria-label="Medium skin tone"></button>
+                <button class="skin-btn" style="background:#8D5524" onclick="selectSkin(this)" aria-label="Dark skin tone"></button>
+                <button class="skin-btn" style="background:#4A2912" onclick="selectSkin(this)" aria-label="Deep skin tone"></button>
+              </div>
+            </div>
+            <button class="btn-primary full-width" onclick="captureSnapshot()" id="captureBtn" style="display:none">
+              <i class="fas fa-camera"></i> Capture Look
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  FASHION TRENDS ANALYTICS                     -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="trends-section" id="trends">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow">Real-Time Intelligence</p>
+        <h2 class="section-title">Fashion Trend Analytics</h2>
+        <p class="section-subtitle">Live insights from runways, streets, and social media worldwide.</p>
+      </div>
+
+      <div class="analytics-dashboard">
+        <!-- Top Trend Cards -->
+        <div class="trend-cards">
+          <div class="trend-card glass-card" id="trend-1">
+            <div class="trend-rank">#1</div>
+            <div class="trend-info">
+              <div class="trend-icon" style="background: linear-gradient(135deg, #f8f8f8, #e0e0e0)">
+                <i class="fas fa-tshirt" style="color:#111"></i>
+              </div>
+              <div>
+                <h4>Quiet Luxury</h4>
+                <p class="trend-category">Aesthetics</p>
+              </div>
+            </div>
+            <div class="trend-metrics">
+              <div class="trend-bar-wrap">
+                <div class="trend-bar" data-width="94" style="background: linear-gradient(90deg, #111, #555)"></div>
+              </div>
+              <span class="trend-pct">+94%</span>
+            </div>
+            <div class="trend-tags">
+              <span class="trend-tag">Runway</span>
+              <span class="trend-tag">Street</span>
+            </div>
+          </div>
+
+          <div class="trend-card glass-card" id="trend-2">
+            <div class="trend-rank">#2</div>
+            <div class="trend-info">
+              <div class="trend-icon" style="background: linear-gradient(135deg, #fff8e7, #f0d890)">
+                <i class="fas fa-gem" style="color:#b8960c"></i>
+              </div>
+              <div>
+                <h4>Gold Accents</h4>
+                <p class="trend-category">Accessories</p>
+              </div>
+            </div>
+            <div class="trend-metrics">
+              <div class="trend-bar-wrap">
+                <div class="trend-bar" data-width="87" style="background: linear-gradient(90deg, #c9a227, #f0d57a)"></div>
+              </div>
+              <span class="trend-pct">+87%</span>
+            </div>
+            <div class="trend-tags">
+              <span class="trend-tag">Accessories</span>
+            </div>
+          </div>
+
+          <div class="trend-card glass-card" id="trend-3">
+            <div class="trend-rank">#3</div>
+            <div class="trend-info">
+              <div class="trend-icon" style="background: linear-gradient(135deg, #f0f4ff, #d0d8f8)">
+                <i class="fas fa-wind" style="color:#4a6cf7"></i>
+              </div>
+              <div>
+                <h4>Sheer Elegance</h4>
+                <p class="trend-category">Eveningwear</p>
+              </div>
+            </div>
+            <div class="trend-metrics">
+              <div class="trend-bar-wrap">
+                <div class="trend-bar" data-width="79" style="background: linear-gradient(90deg, #4a6cf7, #7a9cf9)"></div>
+              </div>
+              <span class="trend-pct">+79%</span>
+            </div>
+            <div class="trend-tags">
+              <span class="trend-tag">Evening</span>
+              <span class="trend-tag">Gala</span>
+            </div>
+          </div>
+
+          <div class="trend-card glass-card" id="trend-4">
+            <div class="trend-rank">#4</div>
+            <div class="trend-info">
+              <div class="trend-icon" style="background: linear-gradient(135deg, #fff0f3, #ffd0db)">
+                <i class="fas fa-leaf" style="color:#c0392b"></i>
+              </div>
+              <div>
+                <h4>Sustainable Chic</h4>
+                <p class="trend-category">Movement</p>
+              </div>
+            </div>
+            <div class="trend-metrics">
+              <div class="trend-bar-wrap">
+                <div class="trend-bar" data-width="73" style="background: linear-gradient(90deg, #e74c3c, #f08070)"></div>
+              </div>
+              <span class="trend-pct">+73%</span>
+            </div>
+            <div class="trend-tags">
+              <span class="trend-tag">Eco</span>
+              <span class="trend-tag">Luxury</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics Charts Area -->
+        <div class="analytics-charts-grid">
+          <div class="chart-panel glass-card" id="salesChart">
+            <div class="chart-header">
+              <h4>Sales Forecast — AI Prediction</h4>
+              <div class="chart-legend">
+                <span class="legend-dot" style="background:#111"></span>Actual
+                <span class="legend-dot" style="background:#c9a227"></span>AI Forecast
+              </div>
+            </div>
+            <div class="chart-area" id="salesChartArea">
+              <canvas id="salesCanvas" width="500" height="200"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-panel glass-card" id="categoryChart">
+            <div class="chart-header">
+              <h4>Category Performance</h4>
+              <span class="chart-period">This Month</span>
+            </div>
+            <div class="category-bars" id="categoryBars">
+              <div class="cat-bar-item">
+                <span class="cat-label">Dresses</span>
+                <div class="cat-bar-bg">
+                  <div class="cat-bar-fill" data-width="82" style="background:#111"></div>
+                </div>
+                <span class="cat-val">82%</span>
+              </div>
+              <div class="cat-bar-item">
+                <span class="cat-label">Outerwear</span>
+                <div class="cat-bar-bg">
+                  <div class="cat-bar-fill" data-width="67" style="background:#555"></div>
+                </div>
+                <span class="cat-val">67%</span>
+              </div>
+              <div class="cat-bar-item">
+                <span class="cat-label">Accessories</span>
+                <div class="cat-bar-bg">
+                  <div class="cat-bar-fill" data-width="91" style="background:#c9a227"></div>
+                </div>
+                <span class="cat-val">91%</span>
+              </div>
+              <div class="cat-bar-item">
+                <span class="cat-label">Evening Wear</span>
+                <div class="cat-bar-bg">
+                  <div class="cat-bar-fill" data-width="54" style="background:#888"></div>
+                </div>
+                <span class="cat-val">54%</span>
+              </div>
+              <div class="cat-bar-item">
+                <span class="cat-label">Footwear</span>
+                <div class="cat-bar-bg">
+                  <div class="cat-bar-fill" data-width="75" style="background:#333"></div>
+                </div>
+                <span class="cat-val">75%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chart-panel glass-card inventory-panel" id="inventoryPanel">
+            <div class="chart-header">
+              <h4><i class="fas fa-boxes"></i> Smart Inventory</h4>
+              <button class="chart-btn" onclick="refreshInventory()"><i class="fas fa-sync-alt"></i> Sync</button>
+            </div>
+            <div class="inventory-stats">
+              <div class="inv-stat">
+                <span class="inv-number" id="invTotal">1,248</span>
+                <span class="inv-label">Total SKUs</span>
+              </div>
+              <div class="inv-stat">
+                <span class="inv-number" id="invLow" style="color:#e74c3c">23</span>
+                <span class="inv-label">Low Stock</span>
+              </div>
+              <div class="inv-stat">
+                <span class="inv-number" id="invNew">156</span>
+                <span class="inv-label">New Arrivals</span>
+              </div>
+            </div>
+            <div class="inventory-alerts">
+              <div class="inv-alert warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Celestial Silk Gown — Only 3 left (Size S)</span>
+              </div>
+              <div class="inv-alert warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Gold Chain Micro Bag — 5 remaining</span>
+              </div>
+              <div class="inv-alert success">
+                <i class="fas fa-check-circle"></i>
+                <span>Midnight Power Blazer — Restocked (200 units)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  STYLE PROFILE SECTION                        -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="style-profile" id="style-profile">
+    <div class="section-container">
+      <div class="style-profile-grid">
+        <div class="profile-left">
+          <p class="section-eyebrow">Personalized Experience</p>
+          <h2 class="section-title">Your Style<br/><em>DNA</em></h2>
+          <p class="profile-desc">
+            StyleVerse builds a living profile of your fashion identity. 
+            The more you shop and interact, the more perfectly we understand you.
+          </p>
+
+          <div class="style-dna-card glass-card" id="styleDnaCard">
+            <div class="dna-header">
+              <div class="dna-avatar">
+                <i class="fas fa-user-circle"></i>
+              </div>
+              <div>
+                <h4 id="profileName">Priya Sharma</h4>
+                <p id="profileTier" class="profile-tier"><i class="fas fa-crown"></i> Diamond Member</p>
+              </div>
+              <div class="dna-score">
+                <span id="styleScore">94</span>
+                <small>Style Score</small>
+              </div>
+            </div>
+
+            <div class="dna-attributes">
+              <div class="dna-attr">
+                <span class="attr-label">Primary Aesthetic</span>
+                <span class="attr-value">Quiet Luxury</span>
+              </div>
+              <div class="dna-attr">
+                <span class="attr-label">Color Palette</span>
+                <div class="color-swatches">
+                  <div class="swatch" style="background:#FAFAFA" title="Off-white"></div>
+                  <div class="swatch" style="background:#111111" title="Jet Black"></div>
+                  <div class="swatch" style="background:#C9A227" title="Gold"></div>
+                  <div class="swatch" style="background:#8B7355" title="Camel"></div>
+                  <div class="swatch" style="background:#DDD5C8" title="Cream"></div>
+                </div>
+              </div>
+              <div class="dna-attr">
+                <span class="attr-label">Preferred Occasions</span>
+                <div class="occasion-tags">
+                  <span class="occ-tag">Events</span>
+                  <span class="occ-tag">Business</span>
+                  <span class="occ-tag">Evening</span>
+                </div>
+              </div>
+              <div class="dna-attr">
+                <span class="attr-label">Fit Preference</span>
+                <span class="attr-value">Tailored & Structured</span>
+              </div>
+            </div>
+
+            <div class="style-radar">
+              <canvas id="radarCanvas" width="200" height="200"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-right">
+          <div class="profile-stats-grid">
+            <div class="p-stat-card glass-card">
+              <i class="fas fa-shopping-bag" style="color:#c9a227"></i>
+              <span class="p-stat-num" data-target="47">0</span>
+              <span class="p-stat-label">Purchases</span>
+            </div>
+            <div class="p-stat-card glass-card">
+              <i class="fas fa-heart" style="color:#e74c3c"></i>
+              <span class="p-stat-num" data-target="136">0</span>
+              <span class="p-stat-label">Wishlist Items</span>
+            </div>
+            <div class="p-stat-card glass-card">
+              <i class="fas fa-star" style="color:#f39c12"></i>
+              <span class="p-stat-num" data-target="2840">0</span>
+              <span class="p-stat-label">Style Points</span>
+            </div>
+            <div class="p-stat-card glass-card">
+              <i class="fas fa-trophy" style="color:#c9a227"></i>
+              <span class="p-stat-num" data-target="12">0</span>
+              <span class="p-stat-label">Rewards Unlocked</span>
+            </div>
+          </div>
+
+          <div class="recommendations-panel glass-card">
+            <h4 class="reco-title"><i class="fas fa-magic"></i> AI Recommendations For You</h4>
+            <div class="reco-items">
+              <div class="reco-item" onclick="addToCart('reco-1','Pearl Drop Earrings','₹8,500')">
+                <img src="assets/collection_handbag.png" alt="Pearl Drop Earrings" class="reco-img" />
+                <div class="reco-info">
+                  <p class="reco-name">Pearl Drop Earrings</p>
+                  <p class="reco-price">₹8,500</p>
+                  <p class="reco-match"><i class="fas fa-bolt"></i> 97% Style Match</p>
+                </div>
+                <button class="reco-add-btn"><i class="fas fa-plus"></i></button>
+              </div>
+              <div class="reco-item" onclick="addToCart('reco-2','Cashmere Wrap Coat','₹68,000')">
+                <img src="assets/collection_black_blazer.png" alt="Cashmere Wrap Coat" class="reco-img" />
+                <div class="reco-info">
+                  <p class="reco-name">Cashmere Wrap Coat</p>
+                  <p class="reco-price">₹68,000</p>
+                  <p class="reco-match"><i class="fas fa-bolt"></i> 95% Style Match</p>
+                </div>
+                <button class="reco-add-btn"><i class="fas fa-plus"></i></button>
+              </div>
+              <div class="reco-item" onclick="addToCart('reco-3','Satin Slip Dress','₹28,000')">
+                <img src="assets/collection_white_dress.png" alt="Satin Slip Dress" class="reco-img" />
+                <div class="reco-info">
+                  <p class="reco-name">Satin Slip Dress</p>
+                  <p class="reco-price">₹28,000</p>
+                  <p class="reco-match"><i class="fas fa-bolt"></i> 93% Style Match</p>
+                </div>
+                <button class="reco-add-btn"><i class="fas fa-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  LOYALTY REWARDS SECTION                      -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="loyalty-section" id="loyalty">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow">Exclusive Benefits</p>
+        <h2 class="section-title">StyleVerse Rewards</h2>
+        <p class="section-subtitle">Every purchase earns you exclusive privileges. The more you explore, the more you unlock.</p>
+      </div>
+
+      <div class="loyalty-tiers">
+        <div class="tier-card glass-card" id="tier-silver">
+          <div class="tier-icon silver"><i class="fas fa-medal"></i></div>
+          <h3 class="tier-name">Silver</h3>
+          <p class="tier-points">0 – 999 pts</p>
+          <ul class="tier-perks">
+            <li><i class="fas fa-check"></i> Early access to sales</li>
+            <li><i class="fas fa-check"></i> Free standard shipping</li>
+            <li><i class="fas fa-check"></i> Birthday discount 10%</li>
+            <li><i class="fas fa-check"></i> AI Style reports</li>
+          </ul>
+          <div class="tier-cta">Current Tier</div>
+        </div>
+
+        <div class="tier-card glass-card featured" id="tier-gold">
+          <div class="tier-badge-top">Most Popular</div>
+          <div class="tier-icon gold"><i class="fas fa-crown"></i></div>
+          <h3 class="tier-name">Gold</h3>
+          <p class="tier-points">1,000 – 4,999 pts</p>
+          <ul class="tier-perks">
+            <li><i class="fas fa-check"></i> All Silver benefits</li>
+            <li><i class="fas fa-check"></i> Free express delivery</li>
+            <li><i class="fas fa-check"></i> Exclusive sale previews</li>
+            <li><i class="fas fa-check"></i> Personal stylist access</li>
+            <li><i class="fas fa-check"></i> Points 2× multiplier</li>
+          </ul>
+          <button class="btn-primary">Upgrade to Gold</button>
+        </div>
+
+        <div class="tier-card glass-card" id="tier-diamond">
+          <div class="tier-icon diamond"><i class="fas fa-gem"></i></div>
+          <h3 class="tier-name">Diamond</h3>
+          <p class="tier-points">5,000+ pts</p>
+          <ul class="tier-perks">
+            <li><i class="fas fa-check"></i> All Gold benefits</li>
+            <li><i class="fas fa-check"></i> Dedicated style concierge</li>
+            <li><i class="fas fa-check"></i> Private collections access</li>
+            <li><i class="fas fa-check"></i> Runway show invitations</li>
+            <li><i class="fas fa-check"></i> Points 3× multiplier</li>
+            <li><i class="fas fa-check"></i> Free returns forever</li>
+          </ul>
+          <button class="btn-outline">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Points Dashboard -->
+      <div class="points-dashboard glass-card" id="pointsDashboard">
+        <div class="points-left">
+          <div class="points-circle" id="pointsCircle">
+            <svg viewBox="0 0 100 100" width="120" height="120">
+              <circle cx="50" cy="50" r="45" fill="none" stroke="#eee" stroke-width="6"/>
+              <circle cx="50" cy="50" r="45" fill="none" stroke="#c9a227" stroke-width="6"
+                stroke-dasharray="283" stroke-dashoffset="170" stroke-linecap="round"
+                transform="rotate(-90 50 50)" id="progressCircle"/>
+            </svg>
+            <div class="points-circle-inner">
+              <span class="pts-num">2,840</span>
+              <span class="pts-label">pts</span>
+            </div>
+          </div>
+          <div class="points-info">
+            <h4>Your Points Balance</h4>
+            <p>2,160 points to Diamond tier</p>
+            <div class="tier-progress-bar">
+              <div class="tier-progress-fill" style="width: 56.8%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="points-right">
+          <h4>Recent Rewards Activity</h4>
+          <div class="rewards-list">
+            <div class="reward-item">
+              <div class="reward-icon earned"><i class="fas fa-plus"></i></div>
+              <div class="reward-info">
+                <p>Purchase — Celestial Silk Gown</p>
+                <span>2 days ago</span>
+              </div>
+              <div class="reward-pts earned">+485 pts</div>
+            </div>
+            <div class="reward-item">
+              <div class="reward-icon spent"><i class="fas fa-minus"></i></div>
+              <div class="reward-info">
+                <p>Redeemed — Style Discount</p>
+                <span>1 week ago</span>
+              </div>
+              <div class="reward-pts spent">-200 pts</div>
+            </div>
+            <div class="reward-item">
+              <div class="reward-icon earned"><i class="fas fa-plus"></i></div>
+              <div class="reward-info">
+                <p>Referral Bonus — Friend Joined</p>
+                <span>2 weeks ago</span>
+              </div>
+              <div class="reward-pts earned">+500 pts</div>
+            </div>
+            <div class="reward-item">
+              <div class="reward-icon earned"><i class="fas fa-plus"></i></div>
+              <div class="reward-info">
+                <p>Birthday Bonus</p>
+                <span>1 month ago</span>
+              </div>
+              <div class="reward-pts earned">+300 pts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  DELIVERY TRACKING SECTION                    -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="delivery-section" id="delivery-tracking">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow">Real-Time Updates</p>
+        <h2 class="section-title">Track Your Order</h2>
+        <p class="section-subtitle">Live delivery tracking with AI-estimated arrival windows.</p>
+      </div>
+
+      <div class="tracking-panel glass-card" id="trackingPanel">
+        <div class="tracking-input-area">
+          <input type="text" id="trackingInput" placeholder="Enter Order ID (e.g. SV-2026-8842)" class="tracking-input" />
+          <button class="btn-primary" onclick="trackOrder()" id="trackBtn">Track Order</button>
+        </div>
+
+        <div class="tracking-result" id="trackingResult" style="display:none">
+          <div class="tracking-order-info">
+            <div class="order-badge">Order #SV-2026-8842</div>
+            <div class="order-status active">In Transit</div>
+          </div>
+          <div class="tracking-product">
+            <img src="assets/collection_white_dress.png" alt="Celestial Silk Gown" class="tracking-product-img" />
+            <div class="tracking-product-info">
+              <h4>Celestial Silk Gown</h4>
+              <p>Size: S | Color: Ivory White</p>
+              <p class="tracking-eta"><i class="fas fa-clock"></i> <strong>Estimated Delivery: Tomorrow, 2–4 PM</strong></p>
+            </div>
+          </div>
+
+          <div class="tracking-steps">
+            <div class="tracking-step completed" id="tstep-1">
+              <div class="step-icon"><i class="fas fa-check"></i></div>
+              <div class="step-content">
+                <h5>Order Placed</h5>
+                <p>May 24, 2026 · 10:32 AM</p>
+              </div>
+              <div class="step-line"></div>
+            </div>
+            <div class="tracking-step completed" id="tstep-2">
+              <div class="step-icon"><i class="fas fa-check"></i></div>
+              <div class="step-content">
+                <h5>Confirmed & Packaged</h5>
+                <p>May 24, 2026 · 3:15 PM</p>
+              </div>
+              <div class="step-line"></div>
+            </div>
+            <div class="tracking-step active" id="tstep-3">
+              <div class="step-icon"><i class="fas fa-truck"></i></div>
+              <div class="step-content">
+                <h5>Out for Delivery</h5>
+                <p>May 26, 2026 · 9:00 AM · Mumbai Hub</p>
+              </div>
+              <div class="step-line"></div>
+            </div>
+            <div class="tracking-step" id="tstep-4">
+              <div class="step-icon"><i class="fas fa-home"></i></div>
+              <div class="step-content">
+                <h5>Delivered</h5>
+                <p>Expected: May 27, 2026</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tracking-map-placeholder">
+            <div class="map-animation">
+              <div class="map-dot origin"></div>
+              <div class="map-route"></div>
+              <div class="map-dot destination pulse"></div>
+              <div class="map-truck" id="mapTruck"><i class="fas fa-truck"></i></div>
+            </div>
+            <div class="map-labels">
+              <span>Mumbai Warehouse</span>
+              <span>Your Address</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  SMART BILLING SECTION                        -->
+  <!-- ══════════════════════════════════════════════ -->
+  <section class="billing-section" id="billing">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow">Seamless Checkout</p>
+        <h2 class="section-title">Smart Billing</h2>
+        <p class="section-subtitle">One-click checkout with AI-powered payment optimization.</p>
+      </div>
+
+      <div class="billing-grid">
+        <div class="billing-cart-panel glass-card" id="billingCartPanel">
+          <h4 class="billing-subtitle"><i class="fas fa-shopping-bag"></i> Your Cart</h4>
+          <div class="billing-cart-items" id="billingCartItems">
+            <div class="billing-empty" id="billingEmpty">
+              <i class="fas fa-shopping-bag"></i>
+              <p>Your cart is empty</p>
+              <button class="btn-outline" onclick="scrollToSection('collections')">Browse Collections</button>
+            </div>
+          </div>
+          <div class="billing-cart-summary" id="cartSummary" style="display:none">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="summarySubtotal">₹0</span>
+            </div>
+            <div class="summary-row">
+              <span>Express Shipping</span>
+              <span class="free-text">FREE</span>
+            </div>
+            <div class="summary-row">
+              <span>Loyalty Discount</span>
+              <span class="discount-text" id="summaryDiscount">-₹0</span>
+            </div>
+            <div class="summary-row total-row">
+              <span>Total</span>
+              <span id="summaryTotal">₹0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="billing-checkout-panel glass-card" id="billingCheckoutPanel">
+          <h4 class="billing-subtitle"><i class="fas fa-credit-card"></i> Payment</h4>
+          <div class="payment-methods">
+            <div class="pay-method active" id="pm-card" onclick="selectPayment('card')">
+              <i class="fas fa-credit-card"></i> Card
+            </div>
+            <div class="pay-method" id="pm-upi" onclick="selectPayment('upi')">
+              <i class="fas fa-mobile-alt"></i> UPI
+            </div>
+            <div class="pay-method" id="pm-emi" onclick="selectPayment('emi')">
+              <i class="fas fa-calendar-alt"></i> EMI
+            </div>
+            <div class="pay-method" id="pm-wallet" onclick="selectPayment('wallet')">
+              <i class="fas fa-wallet"></i> Wallet
+            </div>
+          </div>
+
+          <div class="payment-form" id="paymentForm">
+            <div class="form-group">
+              <label>Card Number</label>
+              <input type="text" placeholder="4242 4242 4242 4242" class="form-input" maxlength="19" id="cardNumber" oninput="formatCard(this)" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Expiry</label>
+                <input type="text" placeholder="MM / YY" class="form-input" maxlength="7" id="cardExpiry" oninput="formatExpiry(this)" />
+              </div>
+              <div class="form-group">
+                <label>CVV</label>
+                <input type="text" placeholder="•••" class="form-input" maxlength="3" id="cardCvv" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Name on Card</label>
+              <input type="text" placeholder="PRIYA SHARMA" class="form-input" id="cardName" />
+            </div>
+          </div>
+
+          <div class="coupon-area">
+            <input type="text" id="couponInput" placeholder="Apply coupon code" class="coupon-input" />
+            <button class="coupon-btn" onclick="applyCoupon()" id="applyCouponBtn">Apply</button>
+          </div>
+
+          <div class="billing-ai-info glass-card" style="border:1px solid rgba(201,162,39,0.2)">
+            <i class="fas fa-robot" style="color:#c9a227"></i>
+            <p><strong>AI Recommendation:</strong> Pay via EMI to save ₹2,400 in interest with our zero-cost EMI partners.</p>
+          </div>
+
+          <button class="btn-primary full-width checkout-btn" onclick="processCheckout()" id="checkoutBtn">
+            <i class="fas fa-lock"></i> Secure Checkout
+          </button>
+          <p class="secure-text"><i class="fas fa-shield-alt"></i> 256-bit SSL Encrypted · PCI DSS Compliant</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  FOOTER                                        -->
+  <!-- ══════════════════════════════════════════════ -->
+  <footer class="footer" id="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">STYLE<span class="logo-accent">VERSE</span></div>
+        <p class="footer-tagline">The Future of Luxury Fashion.<br/>Intelligence meets couture.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h5>Collections</h5>
+          <a href="#">New Arrivals</a>
+          <a href="#">Dresses & Gowns</a>
+          <a href="#">Outerwear</a>
+          <a href="#">Accessories</a>
+          <a href="#">Evening Wear</a>
+          <a href="#">Sustainable Edit</a>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <a href="#">AI Stylist</a>
+          <a href="#">Virtual Try-On</a>
+          <a href="#">Style Consultation</a>
+          <a href="#">Private Shopping</a>
+          <a href="#">Alterations</a>
+        </div>
+        <div class="footer-col">
+          <h5>Rewards</h5>
+          <a href="#">Silver Tier</a>
+          <a href="#">Gold Tier</a>
+          <a href="#">Diamond Tier</a>
+          <a href="#">Refer & Earn</a>
+          <a href="#">Gift Cards</a>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <a href="#">Track Order</a>
+          <a href="#">Returns & Exchange</a>
+          <a href="#">Size Guide</a>
+          <a href="#">FAQ</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 StyleVerse Inc. All rights reserved. · Luxury Reimagined.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  CART SIDEBAR                                 -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar-header">
+      <h3>Your Cart <span id="cartItemCount">(0)</span></h3>
+      <button class="cart-close" id="cartClose" onclick="toggleCart()" aria-label="Close cart"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="cart-sidebar-items" id="cartSidebarItems">
+      <div class="cart-sidebar-empty" id="cartEmpty">
+        <i class="fas fa-shopping-bag"></i>
+        <p>Your wardrobe awaits</p>
+      </div>
+    </div>
+    <div class="cart-sidebar-footer" id="cartSidebarFooter" style="display:none">
+      <div class="cart-total-row">
+        <span>Total</span>
+        <span id="cartTotal">₹0</span>
+      </div>
+      <button class="btn-primary full-width" onclick="scrollToSection('billing'); toggleCart()">Proceed to Checkout</button>
+    </div>
+  </div>
+  <div class="overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  PROFILE SIDEBAR                              -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="profile-sidebar" id="profileSidebar">
+    <div class="profile-sidebar-header">
+      <button class="cart-close" onclick="toggleProfile()" aria-label="Close profile"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="profile-sidebar-content">
+      <div class="profile-avatar-large"><i class="fas fa-user-circle"></i></div>
+      <h3 id="sidebarProfileName">Priya Sharma</h3>
+      <p id="sidebarProfileTier" class="sidebar-tier"><i class="fas fa-crown"></i> Diamond Member</p>
+      <div class="sidebar-points">
+        <span class="sidebar-pts-num">2,840</span>
+        <span class="sidebar-pts-label">Style Points</span>
+      </div>
+      <div class="profile-menu">
+        <a href="#" class="profile-menu-item"><i class="fas fa-user"></i> My Profile</a>
+        <a href="#style-profile" class="profile-menu-item" onclick="toggleProfile()"><i class="fas fa-dna"></i> Style DNA</a>
+        <a href="#delivery-tracking" class="profile-menu-item" onclick="toggleProfile()"><i class="fas fa-truck"></i> My Orders</a>
+        <a href="#loyalty" class="profile-menu-item" onclick="toggleProfile()"><i class="fas fa-gem"></i> Rewards</a>
+        <a href="#" class="profile-menu-item"><i class="fas fa-heart"></i> Wishlist</a>
+        <a href="#" class="profile-menu-item"><i class="fas fa-cog"></i> Settings</a>
+      </div>
+    </div>
+  </div>
+  <div class="overlay" id="profileOverlay" onclick="toggleProfile()"></div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  QUICK VIEW MODAL                             -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="quickViewModal" onclick="closeQuickView(event)">
+    <div class="quick-view-modal glass-card" id="quickViewContent">
+      <button class="modal-close" onclick="closeQuickView(null)" aria-label="Close"><i class="fas fa-times"></i></button>
+      <div class="qv-grid" id="qvGrid"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  TOAST NOTIFICATION                           -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  AI STYLIST MODAL                             -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="aiStylistModal" onclick="closeAIStylist(event)">
+    <div class="ai-stylist-modal glass-card" id="aiStylistContent">
+      <button class="modal-close" onclick="closeAIStylist(null)" aria-label="Close AI Stylist"><i class="fas fa-times"></i></button>
+      <div class="ai-modal-header">
+        <div class="ai-avatar-pulse large">
+          <div class="pulse-ring"></div>
+          <i class="fas fa-robot ai-avatar-icon"></i>
+        </div>
+        <div>
+          <h3>StyleVerse AI Stylist</h3>
+          <p class="ai-status"><span class="status-dot"></span>Ready to style you</p>
+        </div>
+      </div>
+      <div class="ai-quiz">
+        <h4 id="quizQuestion">What's your style goal today?</h4>
+        <div class="quiz-options" id="quizOptions">
+          <button class="quiz-opt" onclick="selectQuizOpt(this,'Work Looks')">💼 Work Looks</button>
+          <button class="quiz-opt" onclick="selectQuizOpt(this,'Date Night')">🌹 Date Night</button>
+          <button class="quiz-opt" onclick="selectQuizOpt(this,'Casual Chic')">☀️ Casual Chic</button>
+          <button class="quiz-opt" onclick="selectQuizOpt(this,'Event Ready')">✨ Event Ready</button>
+          <button class="quiz-opt" onclick="selectQuizOpt(this,'Vacation Vibes')">🌴 Vacation Vibes</button>
+          <button class="quiz-opt" onclick="selectQuizOpt(this,'Black Tie')">🎩 Black Tie</button>
+        </div>
+        <div class="ai-reco-results" id="aiRecoResults" style="display:none">
+          <h4>Your AI-Curated Looks</h4>
+          <div class="ai-reco-grid" id="aiRecoGrid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!--  CHECKOUT SUCCESS MODAL                       -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="checkoutModal" style="display:none">
+    <div class="checkout-modal glass-card">
+      <div class="checkout-success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h3>Order Confirmed!</h3>
+      <p>Your order <strong>#SV-2026-<span id="orderNum">9021</span></strong> has been placed successfully.</p>
+      <p class="checkout-sub">Estimated delivery: <strong>2-3 business days</strong></p>
+      <div class="checkout-points-earned">
+        <i class="fas fa-star"></i> You earned <strong>+485 Style Points!</strong>
+      </div>
+      <button class="btn-primary" onclick="closeCheckoutModal()" id="closeCheckoutBtn">Continue Shopping</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

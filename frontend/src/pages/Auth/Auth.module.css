@@ -1,0 +1,17 @@
+.page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--off-white); padding: 40px 20px; }
+.card { width: 100%; max-width: 440px; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 48px 40px; box-shadow: var(--shadow-md); }
+.logo { display: block; text-align: center; font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--black); margin-bottom: 32px; }
+.logo span { color: var(--gold); }
+.title { font-family: var(--font-display); font-size: 1.8rem; font-weight: 400; color: var(--black); text-align: center; margin-bottom: 6px; }
+.sub { font-size: 13px; color: var(--mid-gray); text-align: center; margin-bottom: 24px; }
+.demoHint { background: #fffbee; border: 1px solid rgba(201,162,39,0.3); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 12px; color: var(--gold-dark); margin-bottom: 20px; }
+.errorBox { background: #fef2f2; border: 1px solid rgba(231,76,60,0.3); border-radius: var(--radius-sm); padding: 10px 14px; font-size: 13px; color: var(--error); margin-bottom: 16px; }
+.form { display: flex; flex-direction: column; }
+.pwWrap { position: relative; }
+.pwWrap .input { padding-right: 44px; }
+.eyeBtn { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--mid-gray); transition: color 0.2s; }
+.eyeBtn:hover { color: var(--black); }
+.switchText { text-align: center; font-size: 13px; color: var(--mid-gray); margin-top: 20px; }
+.switchLink { color: var(--black); font-weight: 700; }
+.spin { animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }

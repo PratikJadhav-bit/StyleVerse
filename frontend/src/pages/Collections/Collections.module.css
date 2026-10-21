@@ -1,0 +1,20 @@
+.header { background: var(--off-white); padding: 60px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 0; }
+.pageTitle { margin-bottom: 6px; }
+.productCount { font-size: 13px; color: var(--mid-gray); }
+.toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 24px 0; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+.catTabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.catTab { padding: 8px 18px; font-size: 12px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--mid-gray); border: 1.5px solid var(--border); border-radius: var(--radius-full); background: var(--white); transition: all 0.25s; cursor: pointer; }
+.catTab:hover { border-color: var(--charcoal); color: var(--charcoal); }
+.catTabActive { background: var(--black); color: var(--white); border-color: var(--black); }
+.toolRight { display: flex; align-items: center; gap: 12px; }
+.filterBtn { display: flex; align-items: center; gap: 7px; padding: 9px 18px; border: 1.5px solid var(--border); border-radius: var(--radius-full); font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.25s; }
+.filterBtn:hover { border-color: var(--black); }
+.sortSelect { padding: 9px 16px; border: 1.5px solid var(--border); border-radius: var(--radius-full); font-family: var(--font-body); font-size: 12px; font-weight: 600; color: var(--charcoal); outline: none; cursor: pointer; }
+.filtersPanel { display: flex; gap: 16px; align-items: flex-end; padding: 20px; background: var(--off-white); border-radius: var(--radius-md); margin: 20px 0; border: 1px solid var(--border); flex-wrap: wrap; }
+.filterGroup { display: flex; flex-direction: column; gap: 6px; min-width: 160px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; padding: 40px 0 80px; }
+.empty { text-align: center; padding: 100px 0; }
+.empty h3 { font-family: var(--font-display); font-size: 1.8rem; margin-bottom: 10px; }
+.empty p { color: var(--mid-gray); margin-bottom: 24px; }
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } .toolbar { flex-direction: column; align-items: flex-start; } }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
